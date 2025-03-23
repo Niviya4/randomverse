@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Bibleverse</title>
+        <link rel= "stylesheet" href="verse.css">
+    </head>
+    <body>
+        <div class="container1">
+            <p>If you are feeling down click here</p>
+            <br><br>
+            <button class="button1" id="b1">Verse</button>
+            <br><br><br>
+            <div class="conatiner2" id="display">
+        </div>
+        </div>
+    </body>
+    <script>
+        const randomVerse=[
+        "Jeremiah 29:11 For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.",
+        "Proverbs 3:5-6 Trust in the Lord with all your heart and lean not on your own understanding;in all your ways submit to him,and he will make your paths straight",
+        "Philippians 4:13 I can do all this through him who gives me strength.",
+        "Joshua 1:9 Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+        "Psalm 23:1 The Lord is my shepherd, I lack nothing.",
+        "Philippians 4 Rejoice in the Lord always. I will say it again: Rejoice!",
+        "Psalm 13:5 But I trust in your unfailing love; my heart rejoices in your salvation."
+       ]
+
+        function getrandomVerse(){
+            const randomIndex=Math.floor(Math.random() * randomVerse.length);
+            return randomVerse[randomIndex];
+        }
+
+        document.getElementById('b1').addEventListener('click',()=>{
+            const verse=getrandomVerse();
+            document.getElementById('display').innerHTML=verse;
+        })
+    </script>
+</html>
